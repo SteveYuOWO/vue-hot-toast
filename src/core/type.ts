@@ -17,7 +17,7 @@ export interface ToastProps {
    */
   autoClose: boolean;
   /**
-   * duration unit: seconds
+   * duration unit: millisecond
    */
   duration: number;
 }
@@ -33,5 +33,5 @@ export const defaultToastOptions = {
   message:
     "Here's your toast.",
   autoClose: true,
-  duration: 3,
+  duration: 3000,
 };

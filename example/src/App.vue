@@ -19,6 +19,7 @@ import "@steveyuowo/vue-hot-toast/vue-hot-toast.css";
       @click="
         toast({
           type: 'success',
+          autoClose:false
         })
       "
     >

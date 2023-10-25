@@ -12,7 +12,7 @@ const delay = ref<number>(0);
 onMounted(() => {
   if (props.autoClose) {
     startedAt.value = Date.now();
-    delay.value = props.duration * 1000;
+    delay.value = props.duration;
     timer.value = setTimeout(close, delay.value);
   }
 });
@@ -33,7 +33,7 @@ const close = () => {
       <div class="VueHotToast__loading" v-if="type === 'loading'" />
     </div>
     <div class="content">
-      <p class="content__message">{{ message }}</p>
+      <div class="content-message">{{ message }}</div>
     </div>
   </div>
 </template>

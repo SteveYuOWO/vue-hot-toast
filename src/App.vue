@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import Toast from "./components/Toast.vue";
-import { toast } from "./core/store";
+import { Toast, toast } from "./index";
 import "./styles/index.scss";
 </script>
 
@@ -10,6 +9,7 @@ import "./styles/index.scss";
       @click="
         toast({
           type: 'loading',
+          duration: 9000000
         })
       "
     >
@@ -19,6 +19,7 @@ import "./styles/index.scss";
       @click="
         toast({
           type: 'success',
+          autoClose:false
         })
       "
     >
