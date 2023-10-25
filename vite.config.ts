@@ -3,7 +3,8 @@ import vue from '@vitejs/plugin-vue'
 import dts from 'vite-plugin-dts';
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => (({
+  publicDir: command === 'build' ? false : 'public',
   plugins: [
     vue(),
     dts({
@@ -26,4 +27,4 @@ export default defineConfig({
       }
     }
   },
-})
+})))
