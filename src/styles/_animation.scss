@@ -1,0 +1,146 @@
+.VueHotToast {
+  &__checkmark {
+    width: 20px;
+    opacity: 0;
+    height: 20px;
+    border-radius: 10px;
+    background:#61d345;
+    position: relative;
+    transform: rotate(45deg);
+
+    animation: checkmarkCircleAnimation 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+      forwards;
+    animation-delay: 100ms;
+    &:after {
+      content: '';
+      box-sizing: border-box;
+      animation: checkmarkAnimation 0.2s ease-out forwards;
+      opacity: 0;
+      animation-delay: 200ms;
+      position: absolute;
+      border-right: 2px solid;
+      border-bottom: 2px solid;
+      border-color: #fff;
+      bottom: 6px;
+      left: 6px;
+      height: 10px;
+      width: 6px;
+    }
+  }
+
+  @keyframes checkmarkCircleAnimation {
+    from {
+      transform: scale(0) rotate(45deg);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1) rotate(45deg);
+      opacity: 1;
+    }
+  }
+
+  @keyframes checkmarkAnimation {
+    0% {
+      height: 0;
+      width: 0;
+      opacity: 0;
+    }
+    40% {
+      height: 0;
+      width: 6px;
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      height: 10px;
+    }
+  }
+
+  &__error {
+    width: 20px;
+    opacity: 0;
+    height: 20px;
+    border-radius: 10px;
+    background: #ff4b4b;
+    position: relative;
+    transform: rotate(45deg);
+
+    animation: errorCircleAnimation 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+      forwards;
+    animation-delay: 100ms;
+
+    &:after,
+    &:before {
+      content: "";
+      animation: errorFirstLineAnimation 0.15s ease-out forwards;
+      animation-delay: 150ms;
+      position: absolute;
+      border-radius: 3px;
+      opacity: 0;
+      background: #fff;
+      bottom: 9px;
+      left: 4px;
+      height: 2px;
+      width: 12px;
+    }
+
+    &:before {
+      animation: errorSecondLineAnimation 0.15s ease-out forwards;
+      animation-delay: 180ms;
+      transform: rotate(90deg);
+    }
+  }
+
+  @keyframes errorCircleAnimation {
+    from {
+      transform: scale(0) rotate(45deg);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1) rotate(45deg);
+      opacity: 1;
+    }
+  }
+
+  @keyframes errorFirstLineAnimation {
+    from {
+      transform: scale(0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes errorSecondLineAnimation {
+    from {
+      transform: scale(0) rotate(90deg);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1) rotate(90deg);
+      opacity: 1;
+    }
+  }
+
+  &__loading {
+    width: 12px;
+    height: 12px;
+    box-sizing: border-box;
+    border: 2px solid;
+    border-radius: 100%;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-right-color: rgba(0, 0, 0, 0.6);
+    animation: loadingRotate 1s linear infinite;
+  }
+
+  @keyframes loadingRotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
