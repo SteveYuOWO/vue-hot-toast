@@ -2,10 +2,10 @@
 
 <div align="center">
   <img src="https://img.shields.io/npm/l/%40steveyuowo%2Fvue-hot-toast" />
-  <img src="https://img.shields.io/npm/v/%40steveyuowo%2Fvue-hot-toast
-" />
+  <img src="https://img.shields.io/npm/v/%40steveyuowo%2Fvue-hot-toast" />
   <img src="https://img.shields.io/github/last-commit/steveyuowo/vue-hot-toast/main"/>
 </div>
+
 
 ## Installation
 
