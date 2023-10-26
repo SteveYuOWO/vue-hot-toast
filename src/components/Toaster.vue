@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ToastItem from "./ToastItem.vue";
+import ToasterItem from "./ToasterItem.vue";
 import { globalState, removeToast } from "../core/store";
 
 const notifications = globalState.notifications;
@@ -12,7 +12,7 @@ const notifications = globalState.notifications;
       class="VueHotToast__teleport-transition"
     >
       <div class="VueHotToast__toast-container">
-        <ToastItem
+        <ToasterItem
           v-for="item in notifications"
           :key="item.id"
           :id="item.id"

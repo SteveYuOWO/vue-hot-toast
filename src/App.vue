@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Toast, toast } from "./index";
+import { Toaster, toast } from "./index";
 import "./styles/index.scss";
 </script>
 
@@ -35,7 +35,7 @@ import "./styles/index.scss";
       Error
     </button>
   </div>
-  <Toast />
+  <Toaster />
 </template>
 
 <style lang="scss" scoped>
