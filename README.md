@@ -5,7 +5,15 @@
   <img src="https://img.shields.io/npm/v/%40steveyuowo%2Fvue-hot-toast" />
   <img src="https://img.shields.io/github/last-commit/steveyuowo/vue-hot-toast/main"/>
 </div>
+<p style="font-weight: bold;" align="center">Vue Hot Toast</p>
 
+<p style="font-style: italic;" align="center">A neat toast for vue3</p>
+
+## Features
+
+- Support type `loading` / `success` / `error` 🐣
+- Support duration ⌛️
+- Support autoClose false 🔐
 
 ## Installation
 
