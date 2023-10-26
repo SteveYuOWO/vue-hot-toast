@@ -27,7 +27,7 @@ Add the Toast and call the toast function.
 
 ```vue
 <script setup lang="ts">
-import { Toast, toast } from "@steveyuowo/vue-hot-toast";
+import { Toaster, toast } from "@steveyuowo/vue-hot-toast";
 import "@steveyuowo/vue-hot-toast/vue-hot-toast.css";
 </script>
 
@@ -43,7 +43,7 @@ import "@steveyuowo/vue-hot-toast/vue-hot-toast.css";
   >
     Success
   </button>
-  <Toast />
+  <Toaster />
 </template>
 ```
 
