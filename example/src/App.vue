@@ -1,41 +1,18 @@
 <script setup lang="ts">
+import { onMounted } from "vue";
 import { Toaster, toast } from "@steveyuowo/vue-hot-toast";
 import "@steveyuowo/vue-hot-toast/vue-hot-toast.css";
-</script>
 
+onMounted(() => {
+  const id = toast.loading("Loading...")
+  setTimeout(() => {
+    toast.update(id, {
+      type: "success",
+      message: "Execution Success!"
+    })
+  }, 1000)
+})
+</script>
 <template>
-  <div :style="{ display: 'flex', gap: '10px'}">
-    <button
-      @click="
-        toast({
-          message: `Here's your toast`,
-          type: 'success',
-          autoClose: false
-        })
-      "
-    >
-      Success
-    </button>
-    <button
-      @click="
-        toast({
-          message: `Here's your toast`,
-          type: 'loading',
-        })
-      "
-    >
-      Loading
-    </button>
-    <button
-      @click="
-        toast({
-          message: `Here's your toast`,
-          type: 'error',
-        })
-      "
-    >
-      Error
-    </button>
-  </div>
   <Toaster />
 </template>

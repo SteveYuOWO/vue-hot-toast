@@ -3,7 +3,7 @@ export interface ToastProps {
   /**
    * toast id
    */
-  id: string;
+  id: Id;
   /**
    * toast type
    */
@@ -22,10 +22,25 @@ export interface ToastProps {
   duration: number;
 }
 
+export type Id = string;
 export type ToastOptions = Partial<Omit<ToastProps, "id">>;
+export type ToastSimpleOptions = Partial<Omit<ToastProps, "id" | "message">>;
 
-export type CreateToast = {
-  (options: ToastOptions): void;
+export interface CreateToast {
+  (options: ToastOptions): Id;
+  update: (id: Id, options: ToastOptions) => string;
+  _handleOptions: (type: ToastType, options: ToastOptions) => string;
+  success: (message: string, options?: ToastSimpleOptions) => string;
+  loading: (message: string, options?: ToastSimpleOptions) => string;
+  error: (message: string, options?: ToastSimpleOptions) => string;
+  promise: <T>(
+    promise: Promise<T>,
+    options: {
+      loading: string,
+      success: string,
+      error: string,
+    }
+  ) => Promise<string>;
 };
 
 export const defaultToastOptions = {

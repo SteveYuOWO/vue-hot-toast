@@ -26,6 +26,7 @@
     "build": "vue-tsc && vite build && pnpm compile-css"
   },
   "dependencies": {
+    "VscodeProjects": "link:..",
     "vue": "^3.3.4"
   },
   "devDependencies": {
