@@ -1,69 +1,33 @@
 <script setup lang="ts">
-import { Toast, toast } from "./index";
+import { Toaster, toast } from "./index";
 import "./styles/index.scss";
+
+function handlePromise() {
+  toast.promise(new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const random =Math.floor( Math.random() * 100);
+      if(random > 90) {
+        reject(new Error('An error occurred after 1 seconds'));
+      } else {
+        resolve("success")
+      }
+    }, 1000);
+  }), {
+    success: 'Success!',
+    error: 'Error!',
+    loading: 'Loading!',
+  })
+}
 </script>
 
 <template>
-  <div class="container">
+  <div>
     <button
-      @click="
-        toast({
-          type: 'loading',
-          duration: 9000000
-        })
-      "
+      @click="handlePromise"
     >
-      Loading
-    </button>
-    <button
-      @click="
-        toast({
-          type: 'success',
-          autoClose:false
-        })
-      "
-    >
-      Success
-    </button>
-    <button
-      @click="
-        toast({
-          type: 'error',
-        })
-      "
-    >
-      Error
+      Promise
     </button>
   </div>
-  <Toast />
+  <Toaster />
 </template>
 
-<style lang="scss" scoped>
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  height: 100vh;
-  width: 100vw;
-  font-family: Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
-
-.container {
-  display: flex;
-  gap: 20px;
-  button {
-    color: #101010;
-    padding: 10px 20px;
-    background: white;
-    border-radius: 8px;
-    border: none;
-    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
-  }
-}
-</style>

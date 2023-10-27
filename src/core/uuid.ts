@@ -1,4 +1,6 @@
-export function createUUID(): string {
+import { Id } from "./type";
+
+export function createUUID(): Id {
   let dt = new Date().getTime();
   var uuid = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(
     /[xy]/g,

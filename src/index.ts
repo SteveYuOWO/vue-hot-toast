@@ -1,7 +1,7 @@
-import Toast from "./components/Toast.vue";
+import Toaster from "./components/Toaster.vue";
 import { toast } from "./core/store";
 
 export {
-  Toast,
+  Toaster,
   toast,
 }
