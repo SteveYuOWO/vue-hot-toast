@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ToastProps } from "../core/type";
-import { onMounted, ref } from "vue";
+import { ref, watchEffect } from "vue";
 
 const props = defineProps<ToastProps>();
 const emit = defineEmits(["close"]);
@@ -9,7 +9,7 @@ const timer = ref<ReturnType<typeof setTimeout> | null>(null);
 const startedAt = ref<number>(0);
 const delay = ref<number>(0);
 
-onMounted(() => {
+watchEffect(() => {
   if (props.autoClose) {
     startedAt.value = Date.now();
     delay.value = props.duration;
