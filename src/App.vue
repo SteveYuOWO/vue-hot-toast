@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { Toaster, toast } from "./index";
+import { Toaster, toast } from "./index.ts";
 import "./styles/index.scss";
+import {toastLoading, toastSuccess} from './helper';
 
 function handlePromise() {
   toast.promise(new Promise((resolve, reject) => {
@@ -18,6 +19,11 @@ function handlePromise() {
     loading: 'Loading!',
   })
 }
+
+function handleSuccess() {
+  const id = toastLoading("Loading...");
+  toastSuccess("Success", id)
+}
 </script>
 
 <template>
@@ -26,6 +32,9 @@ function handlePromise() {
       @click="handlePromise"
     >
       Promise
+    </button>
+    <button @click="handleSuccess">
+      Success
     </button>
   </div>
   <Toaster />

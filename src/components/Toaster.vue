@@ -4,7 +4,7 @@ import { globalState, removeToast } from "../core/store";
 </script>
 <template>
   <Teleport to="body">
-    <transition-group
+    <transition
       name="VueHotToast__teleport-transition"
       tag="div"
       class="VueHotToast__teleport-transition"
@@ -25,6 +25,6 @@ import { globalState, removeToast } from "../core/store";
           "
         />
       </div>
-    </transition-group>
+    </transition>
   </Teleport>
 </template>

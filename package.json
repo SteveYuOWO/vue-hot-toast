@@ -1,6 +1,6 @@
 {
   "name": "@steveyuowo/vue-hot-toast",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "type": "module",
   "files": [
     "dist",
@@ -22,19 +22,17 @@
   },
   "scripts": {
     "dev": "vite",
-    "compile-css": "node-sass ./src/styles/index.scss ./dist/vue-hot-toast.css",
+    "compile-css": "sass ./src/styles/index.scss ./dist/vue-hot-toast.css",
     "build": "vue-tsc && vite build && pnpm compile-css"
   },
   "dependencies": {
-    "VscodeProjects": "link:..",
     "vue": "^3.3.4"
   },
   "devDependencies": {
     "@types/node": "^20.6.4",
     "@vitejs/plugin-vue": "^4.2.3",
-    "node-sass": "^9.0.0",
     "prettier": "^3.0.3",
-    "sass": "^1.68.0",
+    "sass": "^1.69.5",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vite-plugin-dts": "^3.6.1",

@@ -1,4 +1,4 @@
-export type ToastType = "success" | "loading" | "error"
+export type ToastType = "success" | "loading" | "error";
 export interface ToastProps {
   /**
    * toast id
@@ -36,17 +36,16 @@ export interface CreateToast {
   promise: <T>(
     promise: Promise<T>,
     options: {
-      loading: string,
-      success: string,
-      error: string,
-    }
+      loading: string;
+      success: string;
+      error: string;
+    },
   ) => Promise<string>;
-};
+}
 
 export const defaultToastOptions = {
   type: "info",
-  message:
-    "Here's your toast.",
+  message: "Here's your toast.",
   autoClose: true,
   duration: 3000,
 };

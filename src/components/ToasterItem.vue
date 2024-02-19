@@ -9,6 +9,10 @@ const timer = ref<ReturnType<typeof setTimeout> | null>(null);
 const startedAt = ref<number>(0);
 const delay = ref<number>(0);
 
+const close = () => {
+  emit("close");
+};
+
 watchEffect(() => {
   if (props.autoClose) {
     startedAt.value = Date.now();
@@ -16,10 +20,6 @@ watchEffect(() => {
     timer.value = setTimeout(close, delay.value);
   }
 });
-
-const close = () => {
-  emit("close");
-};
 </script>
 <template>
   <div
