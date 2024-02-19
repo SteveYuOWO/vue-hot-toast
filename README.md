@@ -1,4 +1,4 @@
-<img src="./public/header.gif" />
+<img src="https://github.com/SteveYuOWO/vue-hot-toast/blob/main/public/header.gif" />
 
 <div align="center">
   <img src="https://img.shields.io/npm/l/%40steveyuowo%2Fvue-hot-toast" />
