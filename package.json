@@ -27,7 +27,9 @@
   "scripts": {
     "dev": "vite",
     "compile-css": "sass ./src/styles/index.scss ./dist/vue-hot-toast.css",
-    "build": "vue-tsc && vite build && pnpm compile-css"
+    "build": "vue-tsc && vite build && pnpm compile-css",
+    "prettier": "pnpm exec prettier src --write",
+    "prepare": "husky install"
   },
   "dependencies": {
     "vue": "^3.3.4"
@@ -40,7 +42,8 @@
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vite-plugin-dts": "^3.6.1",
-    "vue-tsc": "^1.8.5"
+    "vue-tsc": "^1.8.5",
+    "husky": "^8.0.0"
   },
   "license": "MIT"
 }
