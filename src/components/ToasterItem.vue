@@ -28,9 +28,12 @@ watchEffect(() => {
     @click.prevent="close"
   >
     <div class="VueHotToast__icon">
-      <div class="VueHotToast__checkmark" v-if="type === 'success'" />
-      <div class="VueHotToast__error" v-if="type === 'error'" />
-      <div class="VueHotToast__loading" v-if="type === 'loading'" />
+      <div v-if="icon">
+        <img :src="icon" alt="Toast Icon"/>
+      </div>
+      <div class="VueHotToast__checkmark" v-else-if="type === 'success'" />
+      <div class="VueHotToast__error" v-else-if="type === 'error'" />
+      <div class="VueHotToast__loading" v-else-if="type === 'loading'" />
     </div>
     <div class="content">
       <div class="content-message">{{ message }}</div>

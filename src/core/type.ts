@@ -20,6 +20,10 @@ export interface ToastProps {
    * duration unit: millisecond
    */
   duration: number;
+  /**
+   * Icon to be displayed alongside the toast message.
+   */
+  icon?: string;
 }
 
 export type Id = string;
