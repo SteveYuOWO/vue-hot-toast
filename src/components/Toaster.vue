@@ -18,6 +18,7 @@ import { globalState, removeToast } from "../core/store";
           :message="item.message"
           :auto-close="item.autoClose"
           :duration="item.duration"
+          :icon="item.icon"
           @close="
             () => {
               removeToast(item.id);
