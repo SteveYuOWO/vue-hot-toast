@@ -29,7 +29,13 @@ watchEffect(() => {
   >
     <div class="VueHotToast__icon">
       <div v-if="icon">
-        <img :src="icon" alt="Toast Icon"/>
+        <img
+          class="VueHotToast__custom-icon"
+          :src="icon"
+          :width="24"
+          :height="24"
+          alt="Toast Icon"
+        />
       </div>
       <div class="VueHotToast__checkmark" v-else-if="type === 'success'" />
       <div class="VueHotToast__error" v-else-if="type === 'error'" />
