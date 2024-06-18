@@ -19,13 +19,14 @@ function handlePromise() {
       success: "Success!",
       error: "Error!",
       loading: "Loading!",
+      position: "top-right"
     },
   );
 }
 
 function handleSuccess() {
-  const id = toastLoading("Loading...");
-  toastSuccess("Success", id);
+  const id = toastLoading("Loading...", "top-right");
+  toastSuccess("Success", id, "top-right");
 }
 </script>
 
