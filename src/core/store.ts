@@ -7,7 +7,7 @@ import {
   Id,
   ToastSimpleOptions,
   ToastType,
-  ToastPosition
+  ToastPosition,
 } from "./type";
 import { createUUID } from "./uuid";
 

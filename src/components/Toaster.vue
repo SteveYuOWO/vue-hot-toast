@@ -11,7 +11,6 @@ const position = computed(() => {
     ? globalState.notifications[0].position
     : "top-center";
 });
-
 </script>
 <template>
   <Teleport to="body">
@@ -42,11 +41,35 @@ const position = computed(() => {
   </Teleport>
 </template>
 <style scoped>
-.top-left { top: 0; left: 0; }
-.top-center { top: 0; left: 50%; transform: translateX(-50%); }
-.top-right { top: 0; right: 0; }
-.bottom-left { bottom: 0; left: 0; }
-.bottom-center { bottom: 0; left: 50%; transform: translateX(-50%); }
-.bottom-right { bottom: 0; right: 0; }
-.middle-center { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.top-left {
+  top: 0;
+  left: 0;
+}
+.top-center {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.top-right {
+  top: 0;
+  right: 0;
+}
+.bottom-left {
+  bottom: 0;
+  left: 0;
+}
+.bottom-center {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bottom-right {
+  bottom: 0;
+  right: 0;
+}
+.middle-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 </style>

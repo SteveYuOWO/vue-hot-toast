@@ -8,7 +8,11 @@ export function toastLoading(message: string, position?: ToastPosition) {
   });
 }
 
-export function toastSuccess(message: string, id: Id, position?: ToastPosition) {
+export function toastSuccess(
+  message: string,
+  id: Id,
+  position?: ToastPosition,
+) {
   toast.update(id, {
     message,
     type: "success",
@@ -18,7 +22,11 @@ export function toastSuccess(message: string, id: Id, position?: ToastPosition) 
   });
 }
 
-export function toastError(e: string | Error, id: Id, position?: ToastPosition) {
+export function toastError(
+  e: string | Error,
+  id: Id,
+  position?: ToastPosition,
+) {
   toast.update(id, {
     message: toReadableErrorMessage(e),
     type: "error",
