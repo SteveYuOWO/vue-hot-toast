@@ -1,4 +1,14 @@
 export type ToastType = "success" | "loading" | "error";
+
+export type ToastPosition =
+  | "top-left"
+  | "top-center"
+  | "top-right"
+  | "bottom-left"
+  | "bottom-center"
+  | "bottom-right"
+  | "middle-center";
+
 export interface ToastProps {
   /**
    * toast id
@@ -24,6 +34,10 @@ export interface ToastProps {
    * Icon to be displayed alongside the toast message.
    */
   icon?: string;
+  /**
+   * Position of the toast on the screen.
+   */
+  position?: ToastPosition;
 }
 
 export type Id = string;
@@ -43,6 +57,7 @@ export interface CreateToast {
       loading: string;
       success: string;
       error: string;
+      position?: ToastPosition;
     },
   ) => Promise<string>;
 }
@@ -52,4 +67,5 @@ export const defaultToastOptions = {
   message: "Here's your toast.",
   autoClose: true,
   duration: 3000,
+  position: "top-center",
 };

@@ -7,6 +7,7 @@ import {
   Id,
   ToastSimpleOptions,
   ToastType,
+  ToastPosition,
 } from "./type";
 import { createUUID } from "./uuid";
 
@@ -75,14 +76,18 @@ export const toast: CreateToast = (function () {
       loading: string;
       success: string;
       error: string;
+      position?: ToastPosition;
     },
   ) => {
-    const id = fn.loading(options.loading);
+    const id = fn.loading(options.loading, {
+      position: options.position,
+    });
     return promise
       .then((_) => {
         fn.update(id, {
           message: options.success,
           type: "success",
+          position: options.position,
         });
         return id;
       })
@@ -90,6 +95,7 @@ export const toast: CreateToast = (function () {
         fn.update(id, {
           message: options.error,
           type: "error",
+          position: options.position,
         });
         throw e;
       });
