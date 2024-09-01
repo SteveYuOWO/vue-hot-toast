@@ -34,4 +34,36 @@
   &__icon {
     margin-right: 12px;
   }
+
+  &__top-left {
+    top: 0;
+    left: 0;
+  }
+  &__top-center {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &__top-right {
+    top: 0;
+    right: 0;
+  }
+  &__bottom-left {
+    bottom: 0;
+    left: 0;
+  }
+  &__bottom-center {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &__bottom-right {
+    bottom: 0;
+    right: 0;
+  }
+  &__middle-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }

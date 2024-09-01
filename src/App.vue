@@ -19,7 +19,7 @@ function handlePromise() {
       success: "Success!",
       error: "Error!",
       loading: "Loading!",
-      position: "top-center",
+      position: "top-right",
     },
   );
 }
