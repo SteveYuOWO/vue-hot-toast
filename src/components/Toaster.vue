@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import ToasterItem from "./ToasterItem.vue";
-import { ToastProps } from "../core/type";
 import { globalState, removeToast } from "../core/store";
 
 // Compute the position class
