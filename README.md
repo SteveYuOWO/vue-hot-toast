@@ -83,6 +83,16 @@ toast({
 });
 ```
 
+If you need to change positions, you can pass `position` like so:
+
+```ts
+toast({
+  message: 'Success',
+  type: 'success',
+  position: 'top-right',
+})
+```
+
 ##### 3. Updating Toasts
 
 You can pass options to the `toast` function to customize the appearance and behavior of the toast message.
@@ -106,6 +116,9 @@ toast.promise(yourPromise, {
   success: 'Success!',
   error: 'Error!',
   loading: 'Loading!',
+
+  // Optional: Pass position here to change positioning on webpage
+  position: 'top-right',
 });
 
 // random loading => success/error by promise api
@@ -122,6 +135,9 @@ toast.promise(new Promise((resolve, reject) => {
   success: 'Success!',
   error: 'Error!',
   loading: 'Loading!',
+
+  // Optional: Use position here to change positioning
+  position: 'top-right'
 })
 ```
 
