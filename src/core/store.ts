@@ -21,7 +21,7 @@ export const toast: CreateToast = (function () {
   const fn = ((options: ToastOptions) => {
     const _options = Object.assign({ ...defaultToastOptions }, options);
     const id = createUUID();
-    globalState.notifications.push(
+    globalState.notifications.unshift(
       ...[
         {
           id,
