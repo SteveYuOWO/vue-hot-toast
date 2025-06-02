@@ -13,31 +13,23 @@ const position = computed(() => {
 </script>
 <template>
   <Teleport to="body">
-    <transition
-      name="VueHotToast__teleport-transition"
-      tag="div"
-      class="VueHotToast__teleport-transition"
-    >
-      <div
-        :class="['VueHotToast__toast-container', `VueHotToast__${position}`]"
-      >
-        <ToasterItem
-          v-for="item in globalState.notifications"
-          :key="item.id"
-          :id="item.id"
-          :type="item.type"
-          :message="item.message"
-          :auto-close="item.autoClose"
-          :duration="item.duration"
-          :icon="item.icon"
-          :position="item.position"
-          @close="
-            () => {
-              removeToast(item.id);
-            }
-          "
-        />
-      </div>
-    </transition>
+    <div :class="['VueHotToast__toast-container', `VueHotToast__${position}`]">
+      <ToasterItem
+        v-for="item in globalState.notifications"
+        :key="item.id"
+        :id="item.id"
+        :type="item.type"
+        :message="item.message"
+        :auto-close="item.autoClose"
+        :duration="item.duration"
+        :icon="item.icon"
+        :position="item.position"
+        @close="
+          () => {
+            removeToast(item.id);
+          }
+        "
+      />
+    </div>
   </Teleport>
 </template>

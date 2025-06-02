@@ -11,25 +11,29 @@ function handlePromise() {
         if (random > 90) {
           reject(new Error("An error occurred after 1 seconds"));
         } else {
-          resolve("success");
+          resolve("Here's your toast");
         }
       }, 1000);
     }),
     {
-      success: "Success!",
-      error: "Error!",
-      loading: "Loading!",
-      position: "top-right",
+      success: "Here's your toast!",
+      error: "Whoops, it burnt!",
+      loading: "Oh no, it's loading...",
+      position: "top-center",
     },
   );
 }
 
 function handleSuccess() {
   const id = toastLoading("Loading...", "top-center");
-  toastSuccess("Success", id, "top-center");
+  toastSuccess("Here's your toast", id, "top-center");
 }
 </script>
-
+<style>
+body {
+  background: #fff8e5;
+}
+</style>
 <template>
   <div>
     <button @click="handlePromise">Promise</button>
