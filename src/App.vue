@@ -29,7 +29,11 @@ function handleSuccess() {
   toastSuccess("Success", id, "top-center");
 }
 </script>
-
+<style>
+body {
+  background: #fff8e5;
+}
+</style>
 <template>
   <div>
     <button @click="handlePromise">Promise</button>

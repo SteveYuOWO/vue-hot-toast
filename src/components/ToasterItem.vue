@@ -8,9 +8,16 @@ const emit = defineEmits(["close"]);
 const timer = ref<ReturnType<typeof setTimeout> | null>(null);
 const startedAt = ref<number>(0);
 const delay = ref<number>(0);
+const isLeaving = ref(false);
 
 const close = () => {
-  emit("close");
+  if (isLeaving.value) return;
+  isLeaving.value = true;
+
+  // Wait for exit animation to complete before emitting close
+  setTimeout(() => {
+    emit("close");
+  }, 400); // Match the exit animation duration
 };
 
 watchEffect(() => {
@@ -24,6 +31,7 @@ watchEffect(() => {
 <template>
   <div
     class="VueHotToast__toast"
+    :class="{ leaving: isLeaving }"
     :style="`--toast-duration: ${duration}s;`"
     @click.prevent="close"
   >
